@@ -16,4 +16,4 @@ Créé dans le cadre d'un projet scolaire suivant le thème d'un Alt-CTR Gamejam
 
 ## Devlog - 3 : Level Design et affinage des contrôles
 
-## Devlog - 4 : Polissag (son, animation UI, ...)
+## Devlog - 4 : Polissage (son, animation UI, ...)
