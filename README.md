@@ -43,7 +43,17 @@ keywordRecognizer.OnPhraseRecognized += OnKeywordRecognizer;
 keywordRecognizer.Start();
 ```
 
+```bash
+void OnKeywordRecognizer(PhraseRecognizedEventArgs args)
+{
+    Debug.Log("Keyword: " + args.text);
+    keywordActions[args.text].Invoke();
+}
+```
+
 ### Devlog - 2 : Création d'un menu avec contrôles vocaux
+
+
 
 ### Devlog - 3 : Level Design et affinage des contrôles
 
