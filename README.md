@@ -22,8 +22,8 @@ Pour que la reconnaissance vocale fonctionne il faut :
 
 ### Devlog - 3 : Level Design et affinage des contrôles
 
-![feature](main.png)
-![feature](main.png)
+![Level Design Example 1](Level Design Example 1.png)
+![Level Design Example 2](Level Design Example 2.png)
 
 ### Devlog - 4 : Polissage (son, animation UI, ...)
 
