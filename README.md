@@ -1,6 +1,8 @@
+![Main](Main.png)
+
 # Lead the Way
 
-Créé dans le cadre d'un projet scolaire suivant le thème d'un Alt-CTR Gamejam, Lead the way est un jeu de plateforme utilisant des contrôles vocaux. Prisonnier d'un donjon, le joueur devra dicter des ordres au personnage pour que celui ci pour en sortir.
+Créé dans le cadre d'un projet scolaire suivant le thème d'un Alt-CTR Gamejam, Lead the way est un jeu de plateforme utilisant des contrôles vocaux. Prisonnié d'un donjon, le joueur devra dicter des ordres au personnage pour que celui ci puisse en sortir.
 
 ## Devlog
 
@@ -19,6 +21,9 @@ Pour que la reconnaissance vocale fonctionne il faut :
 ### Devlog - 2 : Création d'un menu avec contrôles vocaux
 
 ### Devlog - 3 : Level Design et affinage des contrôles
+
+![Example1](Example1.png)
+![Example2](Example2.png)
 
 ### Devlog - 4 : Polissage (son, animation UI, ...)
 
