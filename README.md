@@ -37,7 +37,9 @@ keywordActions.Add("Stop", StopMoving);
 keywordActions.Add("Droite", MoveRight);
 keywordActions.Add("Gauche", MoveLeft);
 keywordActions.Add("Hop", Jump);
+```
 
+```bash
 keywordRecognizer = new KeywordRecognizer(keywordActions.Keys.ToArray(), ConfidenceLevel.Low);
 keywordRecognizer.OnPhraseRecognized += OnKeywordRecognizer;
 keywordRecognizer.Start();
