@@ -1,4 +1,4 @@
-![feature](main.png)
+![Main](Main.png)
 
 # Lead the Way
 
