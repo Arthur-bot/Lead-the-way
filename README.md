@@ -10,10 +10,10 @@ Créé dans le cadre d'un projet scolaire suivant le thème d'un Alt-CTR Gamejam
 
 ## Pré-requis pour faire fonctionner le projet
 
-## Log#1 : Création d'une première scène et des premiers contrôles vocaux
+## Devlog - 1 : Création d'une première scène et des premiers contrôles vocaux
 
-## Log#2 : Création d'un menu avec contrôles vocaux
+## Devlog - 2 : Création d'un menu avec contrôles vocaux
 
-## Log#3 : Level Design et affinage des contrôles
+## Devlog - 3 : Level Design et affinage des contrôles
 
-## log#4 : Polissag (son, animation UI, ...)
+## Devlog - 4 : Polissag (son, animation UI, ...)
