@@ -4,8 +4,8 @@ Créé dans le cadre d'un projet scolaire suivant le thème d'un Alt-CTR Gamejam
 
 # Devlog
 
-**Titre**   Lead the Way
-**Début du projet** 03/04/2021
+**Titre**   Lead the Way <br />
+**Début du projet** 03/04/2021 <br />
 **Fin du projet** 10/05/2021
 
 ## Pré-requis pour fonctionner
