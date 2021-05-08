@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         keywordActions.Add("Gauche", MoveLeft);
         keywordActions.Add("Hop", Jump);
 
-        keywordRecognizer = new KeywordRecognizer(keywordActions.Keys.ToArray());
+        keywordRecognizer = new KeywordRecognizer(keywordActions.Keys.ToArray(), ConfidenceLevel.Low);
         keywordRecognizer.OnPhraseRecognized += OnKeywordRecognizer;
         keywordRecognizer.Start();
     }
