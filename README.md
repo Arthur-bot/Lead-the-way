@@ -16,11 +16,53 @@ Pour que la reconnaissance vocale fonctionne il faut :
 - Windows 10 avec Cortana d'activé
 - Un bon microphone
 
-### Devlog - 1 : Création d'une première scène et des premiers contrôles vocaux
+### Devlog - 1 : Niveau test et premiers contrôles vocaux
+
+
+##### Contrôles vocaux : Windows.Speech
+```bash
+using System;
+using System.Linq;
+using UnityEngine.Windows.Speech;
+```
+
+
+```bash
+Dictionary<string, Action> keywordActions = new Dictionary<string, Action>();
+KeywordRecognizer keywordRecognizer;
+```
+
+
+```bash
+keywordActions.Add("Start", StartMoving);
+keywordActions.Add("Stop", StopMoving);
+keywordActions.Add("Droite", MoveRight);
+keywordActions.Add("Gauche", MoveLeft);
+keywordActions.Add("Hop", Jump);
+```
+
+```bash
+keywordRecognizer = new KeywordRecognizer(keywordActions.Keys.ToArray(), ConfidenceLevel.Low);
+keywordRecognizer.OnPhraseRecognized += OnKeywordRecognizer;
+keywordRecognizer.Start();
+```
+
+```bash
+void OnKeywordRecognizer(PhraseRecognizedEventArgs args)
+{
+    keywordActions[args.text].Invoke();
+}
+```
 
 ### Devlog - 2 : Création d'un menu avec contrôles vocaux
 
-### Devlog - 3 : Level Design et affinage des contrôles
+
+
+### Devlog - 3 : Level Design
+
+Le principal inconvéniant de la reconnaissance vocale est la latence que met le système pour reconnaître chaque commande dite par le joueur. Ainsi, il faut pouvoir organiser les niveaux de sorte à laisser du temps au joueur pour anticiper les prochaines actions sans pour autant enlever du challenge.
+
+Les niveaux ont donc été pensé pour laisser le temps au joueur de réagir aux difficultés de chaque niveau. À l'instar d'un 
 
 ![Example1](Example1.png)
 ![Example2](Example2.png)
