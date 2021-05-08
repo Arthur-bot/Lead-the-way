@@ -10,6 +10,11 @@ Créé dans le cadre d'un projet scolaire suivant le thème d'un Alt-CTR Gamejam
 
 ## Pré-requis pour fonctionner
 
+Pour que la reconnaissance vocale fonctionne il faut :
+- Windows 10
+- Cortana d'activé
+- Un bon microphone
+
 ## Devlog - 1 : Création d'une première scène et des premiers contrôles vocaux
 
 ## Devlog - 2 : Création d'un menu avec contrôles vocaux
