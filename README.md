@@ -46,7 +46,6 @@ keywordRecognizer.Start();
 ```bash
 void OnKeywordRecognizer(PhraseRecognizedEventArgs args)
 {
-    Debug.Log("Keyword: " + args.text);
     keywordActions[args.text].Invoke();
 }
 ```
