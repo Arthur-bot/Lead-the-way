@@ -24,6 +24,25 @@ using System.Linq;
 using UnityEngine.Windows.Speech;
 ```
 
+
+```bash
+Dictionary<string, Action> keywordActions = new Dictionary<string, Action>();
+KeywordRecognizer keywordRecognizer;
+```
+
+
+```bash
+keywordActions.Add("Start", StartMoving);
+keywordActions.Add("Stop", StopMoving);
+keywordActions.Add("Droite", MoveRight);
+keywordActions.Add("Gauche", MoveLeft);
+keywordActions.Add("Hop", Jump);
+
+keywordRecognizer = new KeywordRecognizer(keywordActions.Keys.ToArray(), ConfidenceLevel.Low);
+keywordRecognizer.OnPhraseRecognized += OnKeywordRecognizer;
+keywordRecognizer.Start();
+```
+
 ### Devlog - 2 : Création d'un menu avec contrôles vocaux
 
 ### Devlog - 3 : Level Design et affinage des contrôles
