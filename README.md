@@ -23,4 +23,4 @@ Pour que la reconnaissance vocale fonctionne il faut :
 ### Devlog - 4 : Polissage (son, animation UI, ...)
 
 ## Licence
-Le contenu de ce projet est licencié sous la licence  GNU GENERAL PUBLIC, sauf si une autre est spécifiée plus haut. Voir [LICENCE file](https://pages.github.com/) dans le projet pour plus d'informations.
+Le contenu de ce projet est licencié sous la licence  GNU GENERAL PUBLIC, sauf si une autre est spécifiée plus haut. Voir [LICENCE file](https://github.com/Arthur-bot/Lead-the-way/blob/main/LICENSE) dans le projet pour plus d'informations.
