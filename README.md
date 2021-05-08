@@ -18,6 +18,12 @@ Pour que la reconnaissance vocale fonctionne il faut :
 
 ### Devlog - 1 : Création d'une première scène et des premiers contrôles vocaux
 
+```bash
+using System;
+using System.Linq;
+using UnityEngine.Windows.Speech;
+```
+
 ### Devlog - 2 : Création d'un menu avec contrôles vocaux
 
 ### Devlog - 3 : Level Design et affinage des contrôles
