@@ -8,7 +8,7 @@ Créé dans le cadre d'un projet scolaire suivant le thème d'un Alt-CTR Gamejam
 ** Début du projet ** 03/04/2021
 ** Fin du projet ** 10/05/2021
 
-## Pré-requis pour faire fonctionner le projet
+## Pré-requis pour fonctionner
 
 ## Devlog - 1 : Création d'une première scène et des premiers contrôles vocaux
 
