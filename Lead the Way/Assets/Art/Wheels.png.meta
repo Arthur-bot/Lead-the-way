@@ -1,28 +1,13 @@
 fileFormatVersion: 2
-guid: ae0713f00ccd07243b32bedc4d721837
+guid: 579c5b585bf695a4284c3c38aedb056a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5271110397722029070
-    second: Dungeon plateform(1)_0
+      213: 9215612904334546265
+    second: Wheels_0
   - first:
-      213: 8865937656379998670
-    second: Dungeon plateform(1)_1
-  - first:
-      213: -3735063985221628914
-    second: Dungeon plateform(1)_2
-  - first:
-      213: 4688403207922383581
-    second: Dungeon plateform(1)_3
-  - first:
-      213: -4561982176562856362
-    second: Dungeon plateform(1)_4
-  - first:
-      213: 4371953585004238932
-    second: Dungeon plateform(1)_5
-  - first:
-      213: 2179422294301440288
-    second: Dungeon plateform(1)_6
+      213: -6880082710389061173
+    second: Wheels_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -148,139 +133,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dungeon plateform(1)_0
+      name: Wheels_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 53
-        width: 32
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0ce61caafeb62940800000000000000
-      internalID: 5271110397722029070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon plateform(1)_1
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 21
-        width: 17
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ec10a4123532a0b70800000000000000
-      internalID: 8865937656379998670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon plateform(1)_2
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 24
-        width: 17
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0c828b38136a2cc0800000000000000
-      internalID: -3735063985221628914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon plateform(1)_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 56
-        width: 11
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddaf30c90ed801140800000000000000
-      internalID: 4688403207922383581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon plateform(1)_4
-      rect:
-        serializedVersion: 2
-        x: 43
-        y: 56
-        width: 10
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65ebe4e716590b0c0800000000000000
-      internalID: -4561982176562856362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon plateform(1)_5
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 56
-        width: 11
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4585ca83f9c4cac30800000000000000
-      internalID: 4371953585004238932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon plateform(1)_6
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 56
-        width: 32
-        height: 8
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,8 +147,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0297763970dde3e10800000000000000
-      internalID: 2179422294301440288
+      spriteID: 955dd5e2c1f64ef70800000000000000
+      internalID: 9215612904334546265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Wheels_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc904f52a390580a0800000000000000
+      internalID: -6880082710389061173
       vertices: []
       indices: 
       edges: []

@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform wallCheckRight;
     [SerializeField] Transform wallCheckLeft;
+    [SerializeField] LayerMask wallLayer;
     bool isTouchingWall;
     bool wallSliding;
 
@@ -71,7 +72,7 @@ public class PlayerController : MonoBehaviour
     {
         // Check touching ground and wall
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.15f, groundLayer);
-        isTouchingWall = (Physics2D.OverlapCircle(wallCheckRight.position, 0.15f, groundLayer) || Physics2D.OverlapCircle(wallCheckLeft.position, 0.15f, groundLayer));
+        isTouchingWall = (Physics2D.OverlapCircle(wallCheckRight.position, 0.15f, wallLayer) || Physics2D.OverlapCircle(wallCheckLeft.position, 0.15f, wallLayer));
 
         // Update direction for animation
         anim.SetBool("IsInAir", !isGrounded);
@@ -113,11 +114,11 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = Vector3.zero;
 
-            if (Physics2D.OverlapCircle(wallCheckRight.position, 0.15f, groundLayer) && direction == 1)
+            if (Physics2D.OverlapCircle(wallCheckRight.position, 0.15f, wallLayer) && direction == 1)
             {
                 isFacingWall = true;
             }
-            else if (Physics2D.OverlapCircle(wallCheckLeft.position, 0.15f, groundLayer) && direction == -1)
+            else if (Physics2D.OverlapCircle(wallCheckLeft.position, 0.15f, wallLayer) && direction == -1)
             {
                 isFacingWall = true;
             }

@@ -227,6 +227,9 @@ MonoBehaviour:
     m_Bits: 64
   wallCheckRight: {fileID: 7466217606276736472}
   wallCheckLeft: {fileID: 2938286053185756700}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
   anim: {fileID: 8794706974130507766}
   landingEffect: {fileID: 1605288353533960209, guid: aac8e3f78880e4744b60b68e442b0a74, type: 3}
   landingAudio: {fileID: 8300000, guid: c8677862719e441688678e6632161da9, type: 3}

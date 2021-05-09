@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -35,6 +36,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] GameObject playerPrefabs;
     PlayerController currentPlayer;
 
+    [Header("Animations")]
+    [SerializeField] Animator sceneTransition;
+
 
     Dictionary<string, Action> keywordActions = new Dictionary<string, Action>();
     KeywordRecognizer keywordRecognizer;
@@ -70,10 +74,12 @@ public class LevelManager : MonoBehaviour
 
     public void FinishLevel()
     {
+
+
         if(nextLevel != null)
         {
             PlayerPrefs.SetInt(levelName, 1);
-            SceneManager.LoadScene(nextLevel);
+            StartCoroutine(LoadScene(nextLevel));
         }
         else
         {
@@ -94,6 +100,13 @@ public class LevelManager : MonoBehaviour
     public void GoToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Main Menu");
+        StartCoroutine(LoadScene("Main Menu"));
+    }
+
+    IEnumerator LoadScene(string levelName)
+    {
+        sceneTransition.SetTrigger("End");
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(levelName);
     }
 }
