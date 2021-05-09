@@ -83,14 +83,29 @@ Chaque Action associée dans le dictionary<string, Action> définie une action p
 Par exemple :
 
 ```bash
-keywordRecognizer.Start();
+    void Jump()
+    {
+        if (isGrounded)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        }
+        else if (wallSliding)
+        {
+            if (isFacingWall)
+                wallJumpingFace = true;
+            else
+                wallJumping = true;
+
+            Invoke("SetWallJumpingFalse", wallJumpTime);
+        }
+    }
 ```
 
 De plus, le script est associé au prefab personnage. Ainsi, à chaque fois que l'un des personnage est détruit, le keyword recognizer qui lui était associé l'est aussi et un nouveau est initialisé après le respawn du personnage.
 
 ### Devlog - 2 : Création d'un menu avec contrôles vocaux
 
-Le jeu en entier doit pouvoir se jouer sans souris ni clavier, il faut donc créer un menu qui puisse être contrôlé par des commandes vocales de la même manière que le personnage. (cf le script [Main Menu](https://github.com/Arthur-bot/Lead-the-way/blob/main/Lead%20the%20Way/Assets/Script/MainMenu.cs).
+Le jeu en entier doit pouvoir se jouer sans souris ni clavier, il faut donc créer un menu qui puisse être contrôlé par des commandes vocales de la même manière que le personnage. (cf le script [Main Menu](https://github.com/Arthur-bot/Lead-the-way/blob/main/Lead%20the%20Way/Assets/Script/MainMenu.cs).<br />
 Ajout d'un nouveau keyword Recognizer spécifique au menu (les commandes étant inutiles et/ou différentes dans les niveaux).
 
 ```bash
