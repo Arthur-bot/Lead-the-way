@@ -20,18 +20,28 @@ Pour que la reconnaissance vocale fonctionne il faut :
 
 
 ##### Contrôles vocaux : Windows.Speech
+
+Les contrôles vocaux du personnage sont placés dans le script [Player Controller](https://github.com/Arthur-bot/Lead-the-way/blob/main/LICENSE).
+
+Tout d'abord, pour reconnaître les commandes, nous avons besoin de quelques instructions d'utilisations :
+- System pour utiliser les Actions
+- System.Linq pour les Dictionnaires
+- Windows.Speech pour utiliser l'assistant personnel de Windows : **Cortana**
+
 ```bash
 using System;
 using System.Linq;
 using UnityEngine.Windows.Speech;
 ```
 
+Ensuite nous initialisons un Dictionnaire d'Actions avec comme clés les commandes vocales, et le module de reconnaissance vocale.
 
 ```bash
 Dictionary<string, Action> keywordActions = new Dictionary<string, Action>();
 KeywordRecognizer keywordRecognizer;
 ```
 
+Dans la fonction Start de nous définissons nos différents éléments du dictionnaire.
 
 ```bash
 keywordActions.Add("Start", StartMoving);
@@ -40,6 +50,8 @@ keywordActions.Add("Droite", MoveRight);
 keywordActions.Add("Gauche", MoveLeft);
 keywordActions.Add("Hop", Jump);
 ```
+
+Et à la suite, nous initialisons 
 
 ```bash
 keywordRecognizer = new KeywordRecognizer(keywordActions.Keys.ToArray(), ConfidenceLevel.Low);
