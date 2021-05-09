@@ -5021,9 +5021,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4821014004165030147, guid: 64ebf876a2c50ac469a2630939231d2d, type: 3}
+      propertyPath: levelName
+      value: Niveau 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821014004165030147, guid: 64ebf876a2c50ac469a2630939231d2d, type: 3}
+      propertyPath: nextLevel
+      value: Niveau 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821014004165030147, guid: 64ebf876a2c50ac469a2630939231d2d, type: 3}
       propertyPath: sceneTransition
       value: 
       objectReference: {fileID: 424337167}
+    - target: {fileID: 4821014004316352635, guid: 64ebf876a2c50ac469a2630939231d2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4821014004316352635, guid: 64ebf876a2c50ac469a2630939231d2d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64ebf876a2c50ac469a2630939231d2d, type: 3}
 --- !u!1 &1569798753

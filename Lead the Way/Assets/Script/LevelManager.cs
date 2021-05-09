@@ -40,25 +40,10 @@ public class LevelManager : MonoBehaviour
     [SerializeField] Animator sceneTransition;
 
 
-    Dictionary<string, Action> keywordActions = new Dictionary<string, Action>();
-    KeywordRecognizer keywordRecognizer;
-
     // Start is called before the first frame update
     void Start()
     {
-        keywordActions.Add("Menu", GoToMenu);
-        //keywordActions.Add("Restart", RestartLevel);
-
-        keywordRecognizer = new KeywordRecognizer(keywordActions.Keys.ToArray());
-        keywordRecognizer.OnPhraseRecognized += OnKeywordRecognizer;
-        keywordRecognizer.Start();
-
         Init();
-    }
-    void OnKeywordRecognizer(PhraseRecognizedEventArgs args)
-    {
-        Debug.Log("Keyword: " + args.text);
-        keywordActions[args.text].Invoke();
     }
 
     void Init()
@@ -74,8 +59,6 @@ public class LevelManager : MonoBehaviour
 
     public void FinishLevel()
     {
-
-
         if(nextLevel != null)
         {
             PlayerPrefs.SetInt(levelName, 1);

@@ -9,10 +9,10 @@ public class MainMenu : MonoBehaviour
 {
 
     [Header("UI")]
-    [SerializeField] GameObject mainPanel;
     [SerializeField] GameObject levelSelectionPanel;
     [SerializeField] LevelButton[] levelButtons;
-    [SerializeField] GameObject optionsPanel;
+    [SerializeField] AudioSource audioSource2;
+
 
     Dictionary<string, Action> keywordActions = new Dictionary<string, Action>();
     KeywordRecognizer keywordRecognizer;
@@ -21,8 +21,8 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         keywordActions.Add("Jouer", ShowLevelSelection);
-        keywordActions.Add("Options", ShowOptions);
-        keywordActions.Add("Back", GoBack);
+        keywordActions.Add("Musique", Music);
+        keywordActions.Add("Menu", GoBack);
         keywordActions.Add("Quitte", LeaveGame);
 
         keywordRecognizer = new KeywordRecognizer(keywordActions.Keys.ToArray());
@@ -51,18 +51,14 @@ public class MainMenu : MonoBehaviour
         levelSelectionPanel.SetActive(true);
     }
 
-    void ShowOptions()
+    void Music()
     {
-        optionsPanel.SetActive(true);
+        audioSource2.mute = !audioSource2.mute;
     }
 
     void GoBack()
     {
-        if(optionsPanel.activeSelf == true)
-        {
-            optionsPanel.SetActive(false);
-        }
-        else if(levelSelectionPanel.activeSelf == true)
+        if(levelSelectionPanel.activeSelf == true)
         {
             levelSelectionPanel.SetActive(false);
             for (int i = 0; i < 10; i++)
@@ -74,7 +70,7 @@ public class MainMenu : MonoBehaviour
 
     void LeaveGame()
     {
-        if(optionsPanel.activeSelf == false && levelSelectionPanel.activeSelf == false)
+        if(levelSelectionPanel.activeSelf == false)
         {
             Application.Quit();
         }
