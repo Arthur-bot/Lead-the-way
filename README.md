@@ -80,12 +80,25 @@ keywordRecognizer.Start();
 Dans le cas des contrôle du personnage, les contrôles vocaux sont placés dans le script [Player Controller](https://github.com/Arthur-bot/Lead-the-way/blob/main/LICENSE).
 
 Chaque Action associée dans le dictionary<string, Action> définie une action précise comme les changemets de direction, les sauts, ...
+Par exemple :
+
+```bash
+keywordRecognizer.Start();
+```
 
 De plus, le script est associé au prefab personnage. Ainsi, à chaque fois que l'un des personnage est détruit, le keyword recognizer qui lui était associé l'est aussi et un nouveau est initialisé après le respawn du personnage.
 
 ### Devlog - 2 : Création d'un menu avec contrôles vocaux
 
+Le jeu en entier doit pouvoir se jouer sans souris ni clavier, il faut donc créer un menu qui puisse être contrôlé par des commandes vocales de la même manière que le personnage. (cf le script [Main Menu](https://github.com/Arthur-bot/Lead-the-way/blob/main/Lead%20the%20Way/Assets/Script/MainMenu.cs).
+Ajout d'un nouveau keyword Recognizer spécifique au menu (les commandes étant inutiles et/ou différentes dans les niveaux).
 
+```bash
+keywordActions.Add("Jouer", ShowLevelSelection);
+keywordActions.Add("Musique", Music);
+keywordActions.Add("Menu", GoBack);
+keywordActions.Add("Quitte", LeaveGame);
+```
 
 ### Devlog - 3 : Level Design
 
