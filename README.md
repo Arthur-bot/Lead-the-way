@@ -21,8 +21,6 @@ Pour que la reconnaissance vocale fonctionne il faut :
 
 ##### Contrôles vocaux : Windows.Speech
 
-Les contrôles vocaux du personnage sont placés dans le script [Player Controller](https://github.com/Arthur-bot/Lead-the-way/blob/main/LICENSE).
-
 Tout d'abord, pour reconnaître les commandes, nous avons besoin de quelques instructions d'utilisations :
 - System pour utiliser les Actions
 - System.Linq pour les Dictionnaires
@@ -51,7 +49,7 @@ keywordActions.Add("Gauche", MoveLeft);
 keywordActions.Add("Hop", Jump);
 ```
 
-Et à la suite, nous initialisons 
+À la suite, nous créons le Keyword Recognizer en précisant ce que l'on veut reconnaître et le niveau de confiance de la reconnaissance (ici low pour reconnaître un maximum de mot venant du joueur plutôt que d'avoir des ordres non reconnus et non éxecutés).
 
 ```bash
 keywordRecognizer = new KeywordRecognizer(keywordActions.Keys.ToArray(), ConfidenceLevel.Low);
@@ -59,12 +57,31 @@ keywordRecognizer.OnPhraseRecognized += OnKeywordRecognizer;
 keywordRecognizer.Start();
 ```
 
+Puis, nous associons la méthode OnKeywordRecognizer à l'event OnPhraseRecognized
+
+```bash
+keywordRecognizer.OnPhraseRecognized += OnKeywordRecognizer;
+```
+Exemple de méthode :
+
 ```bash
 void OnKeywordRecognizer(PhraseRecognizedEventArgs args)
 {
     keywordActions[args.text].Invoke();
 }
 ```
+
+Et enfin, nous commençons la reconnaissance vocale.
+
+```bash
+keywordRecognizer.Start();
+```
+
+Dans le cas des contrôle du personnage, les contrôles vocaux sont placés dans le script [Player Controller](https://github.com/Arthur-bot/Lead-the-way/blob/main/LICENSE).
+
+Chaque Action associée dans le dictionary<string, Action> définie une action précise comme les changemets de direction, les sauts, ...
+
+De plus, le script est associé au prefab personnage. Ainsi, à chaque fois que l'un des personnage est détruit, le keyword recognizer qui lui était associé l'est aussi et un nouveau est initialisé après le respawn du personnage.
 
 ### Devlog - 2 : Création d'un menu avec contrôles vocaux
 
