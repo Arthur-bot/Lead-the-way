@@ -30,7 +30,6 @@ public class UIController : MonoBehaviour
     }
     void OnKeywordRecognizer(PhraseRecognizedEventArgs args)
     {
-        Debug.Log("Keyword: " + args.text);
         keywordActions[args.text].Invoke();
     }
 

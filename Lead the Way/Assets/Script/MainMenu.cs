@@ -32,7 +32,6 @@ public class MainMenu : MonoBehaviour
 
     void OnKeywordRecognizer(PhraseRecognizedEventArgs args)
     {
-        Debug.Log("Keyword: " + args.text);
         keywordActions[args.text].Invoke();
     }
 
