@@ -16,8 +16,16 @@ Pour que la reconnaissance vocale fonctionne il faut :
 
 Le projet contient tous les fichiers Unity du jeu (Scripts, Animation, Art, ...)
 
-Contenu des différents scripts (C#) :
-- Player Controller : défini 
+Contenu des différents scripts C# (ou .cs) :
+- EndLevel : une seule fonction qui est un trigger. Ce déclenche lorsque le personnage entre dans la collision associée et provoque la fin du niveau.
+- LevelButton : Script lié au boutton de choix de niveau dans le menu principal. Attention, les bouttons ne fonctionnent pas par clique mais par commande vocale ('Niveau 5' par exemple).
+- LevelManager : Tout ce qui est relatif à la gestion d'un niveau, donc les nom du niveau et celui du prochain niveau y sont renseignés, la position où spawn le personnage, etc... C'est un singleton (présent qu'une seule fois par scène).
+- MainMenu : Definition des fonctions relatifs au menu principal, gestion des panneaux (principal et des niveaux), et de quitter le jeu, ...
+- MovablePlateform : Plateforme qui bouge entre 2 points.
+- Player Controller : tous les contrôles (commandes vocales) et fonctions (movement, mort, ...) relatif au personnage. 
+- Room : Une room est un espace associé à une caméra qui est active lorsque le personnage se retrouve dans son espace.
+- UIController : Tout l'UI est controllé par ce script. Il permet aussi de définir les commandes vocales liées à l'UI (pause, son, etc...)
+- UserInterfaceAudio : Tous les sons et musiques présents dans les niveaux (donc pas le menu principal) sont contrôlés depuis ce script.
 
 ## Devlog
 
