@@ -2,7 +2,11 @@
 
 # Lead the Way
 
-Créé dans le cadre d'un projet scolaire suivant le thème d'un Alt-CTR Gamejam, Lead the way est un jeu de plateforme utilisant des contrôles vocaux. Prisonnié d'un donjon, le joueur devra dicter des ordres au personnage pour que celui ci puisse en sortir.
+Créé dans le cadre d'un projet suivant le thème d'un Alt-CTR Gamejam, Lead the way est un jeu de plateforme utilisant des contrôles vocaux. Prisonnié d'un donjon, le joueur devra dicter des ordres au personnage pour que celui ci puisse en sortir.
+
+## Contenu du Projet 
+
+Ce projet contient les fichiers du jeu (Scripts C#, Arts, Musiques/Sons, Animations, ...), réalisé sur la version 2020.2.3f1 de Unity. 
 
 ## Devlog
 
