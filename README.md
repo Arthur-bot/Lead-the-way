@@ -14,7 +14,7 @@ Créé dans le cadre d'un projet scolaire suivant le thème d'un Alt-CTR Gamejam
 
 Pour que la reconnaissance vocale fonctionne il faut :
 - Windows 10 avec Cortana d'activé
-- Un bon microphone
+- Un microphone
 
 ### Devlog - 1 : Niveau test et premiers contrôles vocaux
 
@@ -123,6 +123,14 @@ keywordActions.Add("Musique", Music);
 keywordActions.Add("Menu", GoBack);
 keywordActions.Add("Quitte", LeaveGame);
 ```
+
+Le menu est composé de 2 pages : 
+- la prnicipale avec les différentes options (Jouer, Musique(On/Off), et Quitter)
+
+
+
+- la page des niveaux (allant de 1 à 10). Dans celle-ci, les niveaux débloqués et non sont diffénrenciés par leur sprite.
+ 
 
 ### Devlog - 3 : Level Design
 
