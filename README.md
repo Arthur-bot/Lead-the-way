@@ -77,6 +77,8 @@ Et enfin, nous commençons la reconnaissance vocale.
 keywordRecognizer.Start();
 ```
 
+Maintenant que les contrôles sont créés, il ne reste plus qu'une scène pour les tester 
+
 Dans le cas des contrôle du personnage, les contrôles vocaux sont placés dans le script [Player Controller](https://github.com/Arthur-bot/Lead-the-way/blob/main/Lead%20the%20Way/Assets/Script/PlayerController.cs).
 
 Chaque Action associée dans le dictionary<string, Action> définie une action précise comme les changemets de direction, les sauts, ...
@@ -118,14 +120,28 @@ keywordActions.Add("Quitte", LeaveGame);
 
 ### Devlog - 3 : Level Design
 
-Le principal inconvéniant de la reconnaissance vocale est la latence que met le système pour reconnaître chaque commande dite par le joueur. Ainsi, il faut pouvoir organiser les niveaux de sorte à laisser du temps au joueur pour anticiper les prochaines actions sans pour autant enlever du challenge.
+Le principal inconvéniant de la reconnaissance vocale est la latence que met le système pour reconnaître chaque commande dite par le joueur, mais aussi le temps de latence entre chaque commande (le joueur ne pouvant pas enchaîner 2 commandes, mais doit les espacer de 0.5s entre chaque). Ainsi, il faut pouvoir organiser les niveaux de sorte à laisser du temps au joueur de planifier les prochaines actions sans pour autant enlever du challenge.
 
-Les niveaux ont donc été pensé pour laisser le temps au joueur de réagir aux difficultés de chaque niveau. À l'instar d'un 
+Les niveaux ont donc été pensé à cet effet en élargissant le sol. Après un court temps d'adaptation à cette latence, le joueur sera tout à fait capable d'enchaîner les difficultés qui lui feront face.
 
-![Example1](Example1.png)
-![Example2](Example2.png)
+Il y a maintenant 10 niveaux, dont 3 didactiques permettant au joueur d'apprendre les différentes commandes, puis 7 autres avec une courbe de difficulté croissante. Par exemple, respectivement les niveaux 4 et 7.
+![Niveau 4](Example1.png)
+![Niveau 7](Example2.png)
+
 
 ### Devlog - 4 : Polissage (son, animation UI, ...)
+
+Cette fois, moins de code et plus d'assets :
+- Ajout d'une transition dynamique entre les scènes
+- Ajout d'une musique (différente entre le menu et les niveaux)
+- Ajout de son pour les sauts (lorsque l'on atterri) et la mort du personnage.
+- Ajout d'options pour le son et musique (On/Off) -> problème non résolu, le paramètre ne reste pas entre les niveaux.
+
+### Devlog - 5 : Pistes d'amélioration
+
+- Ajouter de nouvelles plateformes (Mac, ios, android, ...). Actuellement, la reconnaissance vocale ne fonctionne que sur Windows 10 (étant obliger de passer par Cortana), cependant on pourrait tout aussi bien passer par d'autres logiciels de reconnaissance vocale pour élargir le nombre de plateformes.
+- Ajouter un autre objectif pour améliorer le gameplay. À la manière des fraises dans Celeste, rajouter un collectionable présent dans certains niveaux pour donner un nouvel objectif au joueur, tout en rajoutant du défi.
+- Ajouter d'autres niveaux, avec des architectures différentes et des mécaniques spécifiques à ces niveaux (niveau dans l'espace avec un persnnage ralenti, pouvant sauter plus haut et plus loin pour simuler la différence de gravité, ...)
 
 ## Licence
 Le contenu de ce projet est licencié sous la licence  GNU GENERAL PUBLIC, sauf si une autre est spécifiée plus haut. Voir [LICENCE file](https://github.com/Arthur-bot/Lead-the-way/blob/main/LICENSE) dans le projet pour plus d'informations.
