@@ -167,6 +167,7 @@ keywordActions.Add("Menu", GoToMenu);
 ### Devlog - 5 : Pistes d'amélioration
 
 - Ajouter de nouvelles plateformes (Mac, ios, android, ...). Actuellement, la reconnaissance vocale ne fonctionne que sur Windows 10 (étant obliger de passer par Cortana), cependant on pourrait tout aussi bien passer par d'autres logiciels de reconnaissance vocale pour élargir le nombre de plateformes.
+- Ajouter une fonction permettant de capter l'amplitude de la voix, ainsi, en utilisant le commande pour sauter ('Hop'), plus le joueur le dit fort,plus le personnage sautera haut et inversement si le joueur le dit faiblement.
 - Ajouter un autre objectif pour améliorer le gameplay. À la manière des fraises dans Celeste, rajouter un collectionable présent dans certains niveaux pour donner un nouvel objectif au joueur, tout en rajoutant du défi.
 - Ajouter d'autres niveaux, avec des architectures différentes et des mécaniques spécifiques à ces niveaux (niveau dans l'espace avec un persnnage ralenti, pouvant sauter plus haut et plus loin pour simuler la différence de gravité, ...)
 - Corriger certains bugs comme la musique et le son qui ne gardent pas le paramètre choisi correctement, le personnage qui peut rester bloqué sur un rebord après un saut, ...
