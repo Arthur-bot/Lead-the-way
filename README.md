@@ -14,9 +14,9 @@ Pour que la reconnaissance vocale fonctionne il faut :
 
 ## Contenu du Projet 
 
-Le projet contient tous les fichiers Unity du jeu (Scripts, Animation, Art, ...)
+Le projet contient tous les fichiers Unity du jeu. À savoir :
 
-Contenu des différents scripts C# (ou .cs) :
+Les différents scripts C# (ou .cs) :
 - EndLevel : une seule fonction qui est un trigger. Ce déclenche lorsque le personnage entre dans la collision associée et provoque la fin du niveau.
 - LevelButton : Script lié au boutton de choix de niveau dans le menu principal. Attention, les bouttons ne fonctionnent pas par clique mais par commande vocale ('Niveau 5' par exemple).
 - LevelManager : Tout ce qui est relatif à la gestion d'un niveau, donc les nom du niveau et celui du prochain niveau y sont renseignés, la position où spawn le personnage, etc... C'est un singleton (présent qu'une seule fois par scène).
@@ -27,17 +27,29 @@ Contenu des différents scripts C# (ou .cs) :
 - UIController : Tout l'UI est controllé par ce script. Il permet aussi de définir les commandes vocales liées à l'UI (pause, son, etc...)
 - UserInterfaceAudio : Tous les sons et musiques présents dans les niveaux (donc pas le menu principal) sont contrôlés depuis ce script.
 
+Les différents assets graphiques qui proviennent de différents projets personnels antérieurs.
+
+Et les sons et la musique, qui eux proviennent des packages [8-Bit Sfx](https://assetstore.unity.com/packages/audio/sound-fx/8-bit-sfx-32831) et [8-bit music free](https://assetstore.unity.com/packages/audio/music/electronic/8-bit-music-free-136967).
+
+
 ## Devlog
 
 **Titre :**   Lead the Way <br />
 **Début du projet :** 30/04/2021 <br />
 **Fin du projet :** 10/05/2021
 
+### Préambule : idée de base
+
+J'affectionne beaucoup les jeux de plateforme parce que très simple dans les mécaniques et pourtant propose un défi très relevé au joueur. dans ce type de jeu, je peux citer par exemple Celeste, Hollow Knight ou encore Super Meat Boy.
+
+Ainsi, l'idée de départ : faire un jeu de plateforme. Mais avec quel controller ? Là était la difficulté, utiliser autre chose qu'un clavier ou une manette pour contrôler le personnage, tout en gardant une certaine cohérence avec le jeu et sans enlever le défi : Des commandes vocales ! Nous n'incarnons pas le personnage mais nous lui donnons des ordres. Le seul point est d'adapter le GamePlay avec la latence du à la reconnaissance des commandes.
+
 
 ### Devlog - 1 : Niveau test et premiers contrôles vocaux
 
 
-##### Contrôles vocaux : Windows.Speech
+
+##### Implémentation des contrôles vocaux : Windows.Speech
 
 Tout d'abord, pour reconnaître les commandes, nous avons besoin de quelques instructions d'utilisations :
 - System pour utiliser les Actions
@@ -129,11 +141,20 @@ Maintenant que les contrôles sont créés, il ne reste plus qu'une scène pour 
 
 Dans cette scène on voit une étiquette verte 'spawn', d'où le personnage part au début du niveau et où il reapparait après chaque mort, un cercle noir représentant la sortie du niveau et un chemin clair pour y accéder, nous faisant utiliser chaque actions codées précedemment.
 
-### Devlog - 2 : Création d'un menu avec contrôles vocaux
+Et voila, après quelques petites heures, une première scène test avec un personnage pouvant bouger, sauter, mourir et le tout contrôler par la voix. Aucune animation, pas de menu, de son ou autre mais un personnage qui nous obéi et c'est pas mal.
+
+### Devlog - 2 : Nouveau niveau et enchainement entre les niveaux
+
+Un seul niveau pour un jeu de plateforme, ... c'est un peu court. Donc cette fois-ci, j'ai créé un nouveau niveau très original (j'ai simplement copié-collé le premier niveau de test... :D) et j'ai relié le tout : lorsque l'on arrive à la fin du 1er niveau, on charge le 2ème. Et inversement lorsque l'on finie le 2ème, on retombe dans le premier.
+
+On rajoute une petite animation en guise de transition et le tour est joué.
+
+
+### Devlog - 3 : Création d'un menu avec contrôles vocaux
 
 Le jeu en entier doit pouvoir se jouer sans souris ni clavier, il faut donc créer un menu qui puisse être contrôlé par des commandes vocales de la même manière que le personnage. (cf le script [Main Menu](https://github.com/Arthur-bot/Lead-the-way/blob/main/Lead%20the%20Way/Assets/Script/MainMenu.cs)).
 
-Ajout d'un nouveau keyword Recognizer spécifique au menu (les commandes étant inutiles et/ou différentes dans les niveaux).
+Rebelote, ajout d'un nouveau keyword Recognizer spécifique au menu (les commandes étant inutiles et/ou différentes dans les niveaux, ce script n'est présent que dans la scène "Main Menu").
 
 ```bash
 keywordActions.Add("Jouer", ShowLevelSelection);
@@ -143,12 +164,14 @@ keywordActions.Add("Quitte", LeaveGame);
 ```
 
 Le menu est composé de 2 pages : 
-- la prnicipale avec les différentes options (Jouer, Musique(On/Off), et Quitter)
+- la page principale avec les différentes options (Jouer, Musique(On/Off), et Quitter)
+- la page des niveaux (allant de 1 à 10). Dans celle-ci, les niveaux débloqués ou non sont diffénrenciés par leur sprite.
 
+Ensuite, je créé un nouveau keyword Recognizer seuelement pour les niveaux (encore x2) ! Cette fois-ci la commande vocale est définie par une variable (le nom du niveau) 
 
+Pour finir, une nouvelle commande quand je suis dans les niveaux pour pouvoir retourner au menu principal. 
 
-- la page des niveaux (allant de 1 à 10). Dans celle-ci, les niveaux débloqués et non sont diffénrenciés par leur sprite.
- 
+Et voila, maintenant nous avons 2 niveaux, un menu et la capacité de naviguer entre les 3. 
 
 ### Devlog - 3 : Level Design
 
