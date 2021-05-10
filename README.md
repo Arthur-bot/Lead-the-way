@@ -16,7 +16,7 @@ Pour que la reconnaissance vocale fonctionne il faut :
 
 Le projet contient tous les fichiers Unity du jeu. À savoir :
 
-Les différents scripts C# (ou .cs) :
+Les différents scripts C# (.cs) :
 - EndLevel : une seule fonction qui est un trigger. Ce déclenche lorsque le personnage entre dans la collision associée et provoque la fin du niveau.
 - LevelButton : Script lié au boutton de choix de niveau dans le menu principal. Attention, les bouttons ne fonctionnent pas par clique mais par commande vocale ('Niveau 5' par exemple).
 - LevelManager : Tout ce qui est relatif à la gestion d'un niveau, donc les nom du niveau et celui du prochain niveau y sont renseignés, la position où spawn le personnage, etc... C'est un singleton (présent qu'une seule fois par scène).
