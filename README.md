@@ -134,7 +134,7 @@ Le menu est composé de 2 pages :
 
 ### Devlog - 3 : Level Design
 
-Le principal inconvéniant de la reconnaissance vocale est la latence que met le système pour reconnaître chaque commande dite par le joueur, mais aussi le temps de latence entre chaque commande (le joueur ne pouvant pas enchaîner 2 commandes, mais doit les espacer de 0.5s entre chaque). Ainsi, il faut pouvoir organiser les niveaux de sorte à laisser du temps au joueur de planifier les prochaines actions sans pour autant enlever du challenge.
+Le principal inconvéniant de la reconnaissance vocale est la latence que met le système pour reconnaître chaque commande dite par le joueur, mais aussi le temps de latence entre chaque commande (le joueur ne pouvant pas enchaîner 2 commandes, mais doit laisser un espace entre chaque). Ainsi, il faut pouvoir organiser les niveaux de sorte à laisser du temps au joueur de planifier les prochaines actions sans pour autant enlever du challenge.
 
 Les niveaux ont donc été pensé à cet effet en élargissant le sol. Après un court temps d'adaptation à cette latence, le joueur sera tout à fait capable d'enchaîner les difficultés qui lui feront face.
 
