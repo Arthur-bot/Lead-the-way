@@ -171,11 +171,15 @@ Ensuite, je créé un nouveau keyword Recognizer seuelement pour les niveaux (en
 
 Pour finir, une nouvelle commande quand je suis dans les niveaux pour pouvoir retourner au menu principal. 
 
-Et voila, maintenant nous avons 2 niveaux, un menu et la capacité de naviguer entre les 3. 
+```bash
+keywordActions.Add("Menu", GoToMenu);
+```
 
-### Devlog - 3 : Level Design
+Et voila, maintenant nous avons 2 niveaux, un menu, la capacité de naviguer entre les 3 et quelques commandes vocales. 
 
-Le principal inconvéniant de la reconnaissance vocale est la latence que met le système pour reconnaître chaque commande dite par le joueur, mais aussi le temps de latence entre chaque commande (le joueur ne pouvant pas enchaîner 2 commandes, mais doit laisser un espace entre chaque). Ainsi, il faut pouvoir organiser les niveaux de sorte à laisser du temps au joueur de planifier les prochaines actions sans pour autant enlever du challenge.
+### Devlog - 4 : Level Design
+
+Bon, le principal inconvéniant de la reconnaissance vocale est la latence que met le système pour reconnaître chaque commande dite par le joueur, mais aussi (!!) le temps de latence entre chaque commande (le joueur ne peut pas enchaîner 2 commandes, mais doit laisser un espace entre chaque). Ainsi, il faut pouvoir organiser les niveaux de sorte à laisser du temps au joueur de planifier les prochaines actions sans pour autant enlever du challenge.
 
 Les niveaux ont donc été pensé à cet effet en élargissant le sol. Après un court temps d'adaptation à cette latence, le joueur sera tout à fait capable d'enchaîner les difficultés qui lui feront face.
 
@@ -187,14 +191,14 @@ Il y a maintenant 10 niveaux, dont 3 didactiques permettant au joueur d'apprendr
 ![Niveau 7](Example2.png)
 
 
-### Devlog - 4 : Polissage (son, animation UI, ...)
+### Devlog - 5 : Polissage (son, animation UI, ...)
 
 Cette fois, moins de code et plus d'assets :
-- Ajout d'une transition dynamique entre les scènes
-- Ajout d'une musique (différente entre le menu et les niveaux)
-- Ajout de son pour les sauts (lorsque l'on atterri) et la mort du personnage.
-- Ajout d'options pour le son et musique (On/Off) -> problème non résolu, le paramètre ne reste pas entre les niveaux.
-- Ajout d'un menu 'Pause' dans les niveaux pour régler la musique, le son ou alors pour retourner au menu; Celui-ci fonctionnant par contrôle vocaux, il fallait créer de nouveaux ordres : 
+- Ajout d'assets graphiques pour les niveaux didactiques, ceux-ci permettant d'apprendre les différentes commandes
+- Ajout de musiques (une différente pour le menu et les niveaux)
+- Ajout de son pour les sauts (lorsque l'on atterri) et à la mort du personnage.
+- Ajout d'options pour le son et musique (On/Off) -> ces options sont permanentes entre les niveaux
+- Ajout d'un menu 'Pause' dans les niveaux pour régler la musique, le son ou alors pour retourner au menu. Celui-ci fonctionnant par contrôle vocaux, il fallait créer de nouveaux ordres : 
 
 ```bash
 keywordActions.Add("Pause", PauseGame);
@@ -203,15 +207,17 @@ keywordActions.Add("Son", Sound);
 keywordActions.Add("Menu", GoToMenu);
 ```
 
-- 
+Et voila, un jeu de plateforme en 2D le tout utilisant des commandes vocales comme contrôles. :D
 
-### Devlog - 5 : Pistes d'amélioration
+### Devlog - 6 : Pistes d'amélioration
 
-- Ajouter de nouvelles plateformes (Mac, ios, android, ...). Actuellement, la reconnaissance vocale ne fonctionne que sur Windows 10 (étant obliger de passer par Cortana), cependant on pourrait tout aussi bien passer par d'autres logiciels de reconnaissance vocale pour élargir le nombre de plateformes.
+Bon, en soit il y a beaucoup de piste pour améliorer le tout (peut être plus tard...) mais voici une liste non exhaustive :
+
+- Ajouter de nouvelles plateformes (Mac, ios, android, ...). Avec le code actuel, la reconnaissance vocale ne fonctionne que sur Windows 10 (étant obliger de passer par Cortana), cependant on pourrait tout aussi bien passer par d'autres logiciels de reconnaissance vocale pour élargir le nombre de plateformes.
 - Ajouter une fonction permettant de capter l'amplitude de la voix, ainsi, en utilisant le commande pour sauter ('Hop'), plus le joueur le dit fort,plus le personnage sautera haut et inversement si le joueur le dit faiblement.
-- Ajouter un autre objectif pour améliorer le gameplay. À la manière des fraises dans Celeste, rajouter un collectionable présent dans certains niveaux pour donner un nouvel objectif au joueur, tout en rajoutant du défi.
+- Ajouter un autre objectif pour apronfondir le gameplay. À la manière des fraises dans Celeste, rajouter un collectionable présent dans certains niveaux pour donner un nouvel objectif au joueur, tout en rajoutant du défi.
 - Ajouter d'autres niveaux, avec des architectures différentes et des mécaniques spécifiques à ces niveaux (niveau dans l'espace avec un persnnage ralenti, pouvant sauter plus haut et plus loin pour simuler la différence de gravité, ...)
-- Corriger certains bugs comme la musique et le son qui ne gardent pas le paramètre choisi correctement, le personnage qui peut rester bloqué sur un rebord après un saut, ...
+- Corriger certains bugs comme le personnage qui peut rester bloqué sur un rebord après un saut, ...
 
 ## Licence
-Le contenu de ce projet est licencié sous la licence  GNU GENERAL PUBLIC, sauf si une autre est spécifiée plus haut. Voir [LICENCE file](https://github.com/Arthur-bot/Lead-the-way/blob/main/LICENSE) dans le projet pour plus d'informations.
+Le contenu de ce projet est licencié sous la licence GNU GENERAL PUBLIC, sauf si une autre est spécifiée plus haut. Voir [LICENCE file](https://github.com/Arthur-bot/Lead-the-way/blob/main/LICENSE) dans le projet pour plus d'informations. En vrai j'ai pas lu donc c'est du pif :D
