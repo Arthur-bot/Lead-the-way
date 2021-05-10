@@ -77,8 +77,6 @@ Et enfin, nous commençons la reconnaissance vocale.
 keywordRecognizer.Start();
 ```
 
-Maintenant que les contrôles sont créés, il ne reste plus qu'une scène pour les tester 
-
 Dans le cas des contrôle du personnage, les contrôles vocaux sont placés dans le script [Player Controller](https://github.com/Arthur-bot/Lead-the-way/blob/main/Lead%20the%20Way/Assets/Script/PlayerController.cs).
 
 Chaque Action associée dans le dictionary<string, Action> définie une action précise comme les changemets de direction, les sauts, ...
@@ -105,6 +103,14 @@ Par exemple :
 
 De plus, le script est associé au prefab personnage. Ainsi, à chaque fois que l'un des personnage est détruit, le keyword recognizer qui lui était associé l'est aussi et un nouveau est initialisé après le respawn du personnage.
 
+##### Niveau test
+
+Maintenant que les contrôles sont créés, il ne reste plus qu'une scène pour les tester 
+
+![Niveau 4](Example1.png)
+
+Dans cette scène on voit une étiquette verte 'spawn', d'où le personnage part au début du niveau et où il reapparait après chaque mort, un cercle noir représentant la sortie du niveau et un chemin clair pour y accéder, nous faisant utiliser chaque actions codées précedemment.
+
 ### Devlog - 2 : Création d'un menu avec contrôles vocaux
 
 Le jeu en entier doit pouvoir se jouer sans souris ni clavier, il faut donc créer un menu qui puisse être contrôlé par des commandes vocales de la même manière que le personnage. (cf le script [Main Menu](https://github.com/Arthur-bot/Lead-the-way/blob/main/Lead%20the%20Way/Assets/Script/MainMenu.cs)).
@@ -124,7 +130,10 @@ Le principal inconvéniant de la reconnaissance vocale est la latence que met le
 
 Les niveaux ont donc été pensé à cet effet en élargissant le sol. Après un court temps d'adaptation à cette latence, le joueur sera tout à fait capable d'enchaîner les difficultés qui lui feront face.
 
+Pour la création des niveaux, je me suis essentiellement inspiré de 3 jeux de plateforme, Celeste, Super Meat Boy et Catbird.
+
 Il y a maintenant 10 niveaux, dont 3 didactiques permettant au joueur d'apprendre les différentes commandes, puis 7 autres avec une courbe de difficulté croissante. Par exemple, respectivement les niveaux 4 et 7.
+
 ![Niveau 4](Example1.png)
 ![Niveau 7](Example2.png)
 
@@ -142,6 +151,7 @@ Cette fois, moins de code et plus d'assets :
 - Ajouter de nouvelles plateformes (Mac, ios, android, ...). Actuellement, la reconnaissance vocale ne fonctionne que sur Windows 10 (étant obliger de passer par Cortana), cependant on pourrait tout aussi bien passer par d'autres logiciels de reconnaissance vocale pour élargir le nombre de plateformes.
 - Ajouter un autre objectif pour améliorer le gameplay. À la manière des fraises dans Celeste, rajouter un collectionable présent dans certains niveaux pour donner un nouvel objectif au joueur, tout en rajoutant du défi.
 - Ajouter d'autres niveaux, avec des architectures différentes et des mécaniques spécifiques à ces niveaux (niveau dans l'espace avec un persnnage ralenti, pouvant sauter plus haut et plus loin pour simuler la différence de gravité, ...)
+- Corriger certains bugs comme la musique et le son qui ne gardent pas le paramètre choisi correctement, le personnage qui peut rester bloqué sur un rebord après un saut, ...
 
 ## Licence
 Le contenu de ce projet est licencié sous la licence  GNU GENERAL PUBLIC, sauf si une autre est spécifiée plus haut. Voir [LICENCE file](https://github.com/Arthur-bot/Lead-the-way/blob/main/LICENSE) dans le projet pour plus d'informations.
