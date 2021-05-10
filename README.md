@@ -17,14 +17,14 @@ Pour que la reconnaissance vocale fonctionne il faut :
 Le projet contient tous les fichiers Unity du jeu. À savoir :
 
 Les différents scripts C# (.cs) :
-- EndLevel : une seule fonction qui est un trigger. Ce déclenche lorsque le personnage entre dans la collision associée et provoque la fin du niveau.
+- EndLevel : une seule fonction qui est un trigger. Se déclenche lorsque le personnage entre dans la collision associée et provoque la fin du niveau.
 - LevelButton : Script lié au boutton de choix de niveau dans le menu principal. Attention, les bouttons ne fonctionnent pas par clique mais par commande vocale ('Niveau 5' par exemple).
 - LevelManager : Tout ce qui est relatif à la gestion d'un niveau, donc le nom du niveau et celui du prochain niveau y sont renseignés, la position où spawn le personnage, etc... C'est un singleton (présent qu'une seule fois par scène).
-- MainMenu : Definition des fonctions relatifs au menu principal, gestion des panneaux (principal et des niveaux), et de quitter le jeu, ...
+- MainMenu : Definition des fonctions relatives au menu principal, gestion des panneaux (principal et des niveaux), et de quitter le jeu, ...
 - MovablePlateform : Plateforme qui bouge entre 2 points.
-- Player Controller : tous les contrôles (commandes vocales) et fonctions (movement, mort, ...) relatif au personnage. 
+- Player Controller : tous les contrôles (commandes vocales) et fonctions (mouvement, mort, ...) relatif au personnage. 
 - Room : Une room est un espace associé à une caméra qui est active lorsque le personnage se retrouve dans son espace.
-- UIController : Tout l'UI est controllé par ce script. Il permet aussi de définir les commandes vocales liées à l'UI (pause, son, etc...)
+- UIController : Toute l'UI dans les niveaux est controllée par ce script. Il permet aussi de définir les commandes vocales liées à l'UI (pause, son, etc...)
 - UserInterfaceAudio : Tous les sons et musiques présents dans les niveaux (donc pas le menu principal) sont contrôlés depuis ce script.
 
 Les différents assets graphiques qui proviennent de différents projets personnels antérieurs.
@@ -40,15 +40,16 @@ Et les sons et la musique, qui eux proviennent des packages [8-Bit Sfx](https://
 
 ### Préambule : idée de base
 
-J'affectionne beaucoup les jeux de plateforme parce que très simple dans les mécaniques et pourtant propose un défi très relevé au joueur. dans ce type de jeu, je peux citer par exemple Celeste, Hollow Knight ou encore Super Meat Boy.
+J'affectionne beaucoup les jeux de plateforme parce que très simple dans les mécaniques et pourtant propose un défi très relevé au joueur. Dans ce type de jeu, je peux citer par exemple Celeste, Hollow Knight ou encore Super Meat Boy.
 
-Ainsi, l'idée de départ : faire un jeu de plateforme. Mais avec quel controller ? Là était la difficulté, utiliser autre chose qu'un clavier ou une manette pour contrôler le personnage, tout en gardant une certaine cohérence avec le jeu et sans enlever le défi : Des commandes vocales ! Nous n'incarnons pas le personnage mais nous lui donnons des ordres. Le seul point est d'adapter le GamePlay avec la latence du à la reconnaissance des commandes.
+Ainsi, j'ai l'idée de départ : faire un jeu de plateforme. Mais avec quel controller ? Là était la difficulté, utiliser autre chose qu'un clavier ou une manette pour contrôler le personnage, tout en gardant une certaine cohérence avec le jeu et sans enlever le défi : Des commandes vocales ! Dance ce cas, nous n'incarnons pas le personnage mais nous lui donnons des ordres. Le seul point est d'adapter le GamePlay avec la latence dû à la reconnaissance des commandes.
 
 
 ### Devlog - 1 : Niveau test et premiers contrôles vocaux
 
+Il faut bien commencer quelque part, un personnage dans un premier niveau dit "test" avec des premières commandes vocales.
 
-
+De manière plus techinques :
 ##### Implémentation des contrôles vocaux : Windows.Speech
 
 Tout d'abord, pour reconnaître les commandes, nous avons besoin de quelques instructions d'utilisations :
@@ -69,7 +70,7 @@ Dictionary<string, Action> keywordActions = new Dictionary<string, Action>();
 KeywordRecognizer keywordRecognizer;
 ```
 
-Dans la fonction Start de nous définissons nos différents éléments du dictionnaire.
+Dans la fonction Start de Unity nous définissons nos différents éléments du dictionnaire.
 
 ```bash
 keywordActions.Add("Start", StartMoving);
@@ -135,13 +136,13 @@ De plus, le script est associé au prefab personnage. Ainsi, à chaque fois que 
 
 ##### Niveau test
 
-Maintenant que les contrôles sont créés, il ne reste plus qu'une scène pour les tester 
+Maintenant que les contrôles sont créés, il ne reste plus qu'une scène pour les tester :
 
 ![Niveau 4](Example1.png)
 
 Dans cette scène on voit une étiquette verte 'spawn', d'où le personnage part au début du niveau et où il reapparait après chaque mort, un cercle noir représentant la sortie du niveau et un chemin clair pour y accéder, nous faisant utiliser chaque actions codées précedemment.
 
-Et voila, après quelques petites heures, une première scène test avec un personnage pouvant bouger, sauter, mourir et le tout contrôler par la voix. Aucune animation, pas de menu, de son ou autre mais un personnage qui nous obéi et c'est pas mal.
+Et voila, après quelques petites heures, une première scène test avec un personnage pouvant bouger, sauter, mourir et le tout contrôlé par la voix. Aucune animation, pas de menu, de son ou autre mais un personnage qui nous obéi et c'est pas mal.
 
 ### Devlog - 2 : Nouveau niveau et enchainement entre les niveaux
 
