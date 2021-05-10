@@ -33,18 +33,17 @@ public class UserInterfaceAudio : MonoBehaviour
 
     private void Start()
     {
+        LoadSettings();
+
         audioSource2 = gameObject.AddComponent<AudioSource>();
         audioSource2.spatialBlend = 0;
         audioSource2.clip = audioMusic;
         audioSource2.loop = true;
         audioSource2.volume = 0.2f;
+        audioSource2.mute = MuteMusic;
         audioSource2.Play();
 
-
-        LoadSettings();
-
         audioSource.mute = MuteSfx;
-        audioSource2.mute = MuteMusic;
     }
 
     void Play(AudioClip clip)
@@ -58,7 +57,7 @@ public class UserInterfaceAudio : MonoBehaviour
     public void SFX()
     {
         audioSource.mute = !audioSource.mute;
-        MuteSfx = !audioSource.mute;
+        MuteSfx = audioSource.mute;
 
         PlayerPrefs.SetInt(muteSfxKey, MuteSfx ? 1 : 0);
     }
@@ -66,7 +65,7 @@ public class UserInterfaceAudio : MonoBehaviour
     public void Music()
     {
         audioSource2.mute = !audioSource2.mute;
-        MuteMusic = !audioSource2.mute;
+        MuteMusic = audioSource2.mute;
 
         PlayerPrefs.SetInt(muteMusicKey, MuteMusic ? 1 : 0);
     }

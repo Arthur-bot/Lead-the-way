@@ -53,6 +53,8 @@ public class MainMenu : MonoBehaviour
     void Music()
     {
         audioSource2.mute = !audioSource2.mute;
+
+        PlayerPrefs.SetInt("MuteMusic", audioSource2.mute ? 1 : 0);
     }
 
     void GoBack()
