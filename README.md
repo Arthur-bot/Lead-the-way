@@ -4,9 +4,20 @@
 
 Créé dans le cadre d'un projet suivant le thème d'un Alt-CTR Gamejam, Lead the way est un jeu de plateforme utilisant des contrôles vocaux. Prisonnié d'un donjon, le joueur devra dicter des ordres au personnage pour que celui ci puisse en sortir.
 
+Ce projet a été réalisé sous Unity, version 2020.2.3f1.
+
+### Pré-requis pour fonctionner
+
+Pour que la reconnaissance vocale fonctionne il faut :
+- Windows 10 avec Cortana d'activé
+- Un microphone
+
 ## Contenu du Projet 
 
-Ce projet contient les fichiers du jeu (Scripts C#, Arts, Musiques/Sons, Animations, ...), réalisé sur la version 2020.2.3f1 de Unity. 
+Le projet contient tous les fichiers Unity du jeu (Scripts, Animation, Art, ...)
+
+Contenu des différents scripts (C#) :
+- Player Controller : défini 
 
 ## Devlog
 
@@ -14,11 +25,6 @@ Ce projet contient les fichiers du jeu (Scripts C#, Arts, Musiques/Sons, Animati
 **Début du projet :** 30/04/2021 <br />
 **Fin du projet :** 10/05/2021
 
-### Pré-requis pour fonctionner
-
-Pour que la reconnaissance vocale fonctionne il faut :
-- Windows 10 avec Cortana d'activé
-- Un microphone
 
 ### Devlog - 1 : Niveau test et premiers contrôles vocaux
 
