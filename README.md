@@ -145,6 +145,16 @@ Cette fois, moins de code et plus d'assets :
 - Ajout d'une musique (différente entre le menu et les niveaux)
 - Ajout de son pour les sauts (lorsque l'on atterri) et la mort du personnage.
 - Ajout d'options pour le son et musique (On/Off) -> problème non résolu, le paramètre ne reste pas entre les niveaux.
+- Ajout d'un menu 'Pause' dans les niveaux pour régler la musique, le son ou alors pour retourner au menu; Celui-ci fonctionnant par contrôle vocaux, il fallait créer de nouveaux ordres : 
+
+```bash
+keywordActions.Add("Pause", PauseGame);
+keywordActions.Add("Musique", Music);
+keywordActions.Add("Son", Sound);
+keywordActions.Add("Menu", GoToMenu);
+```
+
+- 
 
 ### Devlog - 5 : Pistes d'amélioration
 
